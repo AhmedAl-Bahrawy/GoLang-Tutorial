@@ -1,10 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // First Function in Go
 func main()  {
-	x := -1000
-	y := int8(x)
-	fmt.Println(x, y)
+	x := float64(10)
+	y := 1.2
+
+	z := x + y
+	fmt.Println(z)
 }
