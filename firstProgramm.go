@@ -6,15 +6,7 @@ import (
 
 // First Function in Go
 func main()  {
-	a := 2
-
-	switch a {
-	case 1:
-		fmt.Println("one")
-	case 2:
-		fmt.Println("two")
-		fallthrough
-	default:
-		fmt.Println("default")
+	for idx := 0; idx < 10; idx++ {
+		fmt.Println(idx);
 	}
 }
