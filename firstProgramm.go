@@ -1,17 +1,28 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 // First Function in Go
 func main()  {
-	// Pointer -> arr[0]
-	// Length -> 3
-	// Capacity -> 5
+	sl := []string{"Hello", "World"} // Slice Type Of the Array
+	numbers := []int{1, 2, 3, 4} // Slice Type Of the Array
 
+	fmt.Println()
 
-	arr := [5]int{1, 2 , 3, 4, 5};
-	sl := arr[:3]; // [1 2 3], len -> 3, Pointer -> arr[0], Capacity -> 5
-	sl = sl[:4] // [1 2 3 4], len -> 4, Pointer -> arr[0], Capacity -> 5
-	sl = sl[1:4] // [2 3 4], len -> 3, Pointer -> arr[0], Capacity -> 4
-	fmt.Printf("Array: %v\nLength: %v\nCapacity: %v\n", sl, len(sl), cap(sl))
+	fmt.Printf("Numbers Array Types: %T, numbers: %v, length: %v, capacity: %v\n", numbers, numbers, len(numbers), cap(numbers))
+	fmt.Printf("SL Array Types: %T, sl: %v, length: %v, capacity: %v\n", sl, sl, len(sl), cap(sl))
+
+	fmt.Println()
+	fmt.Println(strings.Repeat("*", 50))
+	fmt.Println()
+
+	for x := 0; x < 10; x++ {
+		sl = append(sl, "Ahmed")
+		fmt.Printf("SL: %v, length: %v, capacity: %v\n", sl, len(sl), cap(sl))
+	}
+
+	fmt.Println()
 }
