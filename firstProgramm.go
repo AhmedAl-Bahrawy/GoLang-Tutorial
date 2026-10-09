@@ -4,11 +4,10 @@ import "fmt"
 
 // First Function in Go
 func main()  {
-	arr := [...][2]int{{1, 2}, {1, 2}, {1, 2}, {1, 2}}
-	test(arr)
-	fmt.Println(arr)
-}
-
-func test(arr [4][2]int){
-	arr[0] = [2]int{100, 100}
+	arr := [5]int{1, 2 , 3, 4, 5};
+	sl := arr[:3]; // [1 2 3]
+	sl2 := arr[1:3]; // [2 3]
+	sl[1] = 100
+	fmt.Println(sl);
+	fmt.Println(sl2);
 }
