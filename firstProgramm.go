@@ -16,7 +16,7 @@ func main() {
 	var p1 Person = Person{name: "Ahmed"}
 	p1.name = "Ahmed Albahrawy"
 	p1.f = func(x string) string {
-		return ""
+		return x + "s"
 	}
 
 	
