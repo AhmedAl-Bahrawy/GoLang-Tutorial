@@ -1,20 +1,15 @@
-
 package main
 
-import "fmt"
+func sum(numbers ...int) int{
+	sum := 0
+	for _, value := range numbers {
+		sum += value
+	}
 
-func getFunc(str string) func(string) func(string) string {
-    return func(str2 string) func(string) string {
-        return func(str3 string) string {
-            return str + " " + str2 + " " + str3
-        }
-    }
+	return sum	
 }
 
 func main() {
-    f1 := getFunc("Hello")
-    f2 := f1("World")
-    value := f2("Ahmed")
-
-    fmt.Println(value)
+    s := sum(1, 2, 3, 4, 5, 6)
+	println(s)
 }
