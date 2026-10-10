@@ -4,14 +4,11 @@ import "fmt"
 
 // First Function in Go
 func main()  {
-	sl := []string{"hello", "world", "hi"}
-	test(sl)
-	for i, value := range sl {
-		fmt.Println(i, value)
-	}
-}
+	var mp map[string]int = map[string]int{"a" : 1}
+	mp2 := map[string]int{"b" : 2}
+	mp3 := make(map[string]int)
 
-
-func test(arr []string) {
-	arr[0] = "Changed"
+	fmt.Printf("%v\n", mp)
+	fmt.Printf("%v\n", mp2)
+	fmt.Printf("%v\n", mp3)
 }
