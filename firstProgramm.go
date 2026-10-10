@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// The Passed Functions Must be in the same type
 func callFunc(callable func(int) int, number int) int{
 	return callable(number)
 }
@@ -15,6 +16,7 @@ func tripleNumber(number int) int{
 }
 
 func main()  {
+	// Pass Functions to Another Functions
 	value := callFunc(doubleNumber, 10)
 	fmt.Println(value)
 
