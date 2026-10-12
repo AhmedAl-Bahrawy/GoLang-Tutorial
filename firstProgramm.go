@@ -2,31 +2,40 @@ package main
 
 import "fmt"
 
-// Start of  Person Struct
-type Sport struct {
-	Name string
-	Position string
+type Shape interface {
+	getParam() uint
+	getSides() []uint
 }
-// End of Person Struct
 
-// Start of  Person Struct
-type Person struct {
-	Name string
-	Age uint
-	FavSports []Sport
+
+type Sqaure struct {
+	width uint
 }
-// End of Person Struct
 
+func (s Sqaure) getParam() uint {
+	return s.width * 4
+}
 
+// Start of Triangle Struct
+type Triangle struct {
+	a uint
+	b uint
+	c uint
+}
+
+func (t Triangle) getParam() uint {
+	return t.a + t.b + t.c
+}
+
+func (t Triangle) getSides() []uint {
+	return []uint{t.a, t.b, t.c}
+}
+// End of Triangle Struct
 
 func main() {
-	p1 := Person{Age: 17, Name: "Ahmed",
-		FavSports: []Sport{
-			Sport{"Chess", "HAMADA"},
-			Sport{"Football", "CR7"}}}
+	var s Shape = Triangle{1, 2, 5}
 
-	
-	fmt.Println(p1)
-	fmt.Println(p1.FavSports[0].Name)
-	fmt.Println(p1.FavSports[1].Name)
+	fmt.Printf("Param of Shape Triangle is: %v\n", s.getParam())
+	fmt.Printf("Sides of Shape Triangle is: %v\n", s.getSides())
+
 }
