@@ -13,14 +13,20 @@ type Sport struct {
 type Person struct {
 	Name string
 	Age uint
-	FavSport Sport
+	FavSports []Sport
 }
 // End of Person Struct
 
 
 
 func main() {
-	p1 := Person{Age: 17, Name: "Ahmed", FavSport: Sport{Name: "Chess", Position: "IDK"}}
+	p1 := Person{Age: 17, Name: "Ahmed",
+		FavSports: []Sport{
+			Sport{"Chess", "HAMADA"},
+			Sport{"Football", "CR7"}}}
+
+	
 	fmt.Println(p1)
-	fmt.Println(p1.FavSport.Name)
+	fmt.Println(p1.FavSports[0].Name)
+	fmt.Println(p1.FavSports[1].Name)
 }
