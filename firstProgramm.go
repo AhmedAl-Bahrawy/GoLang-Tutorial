@@ -3,26 +3,24 @@ package main
 import "fmt"
 
 // Start of  Person Struct
+type Sport struct {
+	Name string
+	Position string
+}
+// End of Person Struct
 
+// Start of  Person Struct
 type Person struct {
 	Name string
 	Age uint
+	FavSport Sport
 }
-
-func (p *Person) getName() string {
-	return p.Name
-}
-
-func (p *Person) setName(newName string) {
-	p.Name = newName
-}
-
 // End of Person Struct
 
-func main() {
-	p1 := Person{Age: 17}
-	p1.setName("Ahmed")
-	value := p1.getName()
 
-	fmt.Println(value)
+
+func main() {
+	p1 := Person{Age: 17, Name: "Ahmed", FavSport: Sport{Name: "Chess", Position: "IDK"}}
+	fmt.Println(p1)
+	fmt.Println(p1.FavSport.Name)
 }
