@@ -2,8 +2,9 @@ package main
 
 import "fmt"
 
-func add[T int | float64 | uint](x T, y T) T {
-	return x + y
+func add[T int | float64 | uint](x T, y T) (sum T) {
+	sum = x + y
+	return
 }
 
 
