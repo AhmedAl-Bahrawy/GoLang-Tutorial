@@ -2,16 +2,17 @@ package main
 
 import "fmt"
 
-func add[T int | float64 | uint](x T, y T) (sum T) {
-	sum = x + y
+func getVals[K comparable, V any](mp map[K]V) (keys []K, vals []V) {
+	for key, val := range mp {
+		vals = append(vals, val)
+		keys = append(keys, key)
+	}
+
 	return
 }
 
-
-
 func main() {
-	val := add(2, 2.5)
-	val2 := add(uint(22), uint(2))
-	fmt.Println(val)
-	fmt.Println(val2)	
+	mp := map[string]int{"a": 100, "b": 200, "c": 300}
+	keys, vals := getVals(mp)
+	fmt.Println(keys, vals)
 }
