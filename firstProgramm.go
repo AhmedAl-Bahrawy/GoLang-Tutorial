@@ -16,12 +16,10 @@ func deffered(){
 }
 
 func main() {
-	// devision := devided(1, 0)
-	// fmt.Println(devision)
-	fmt.Println("run-1")
 	defer deffered()
 
-	// panic("Here We Are There is an Err Here Fix that Bro")
-
-	fmt.Println("run-2")
+	devision := devided(1, 0)
+	fmt.Println(devision)
+	
+	fmt.Println("Programm Runs Safe")
 }
