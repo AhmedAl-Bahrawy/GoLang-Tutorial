@@ -1,25 +1,22 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
-func devided(a int, b int) int {
-	return a / b
-}
-
-func deffered(){
-	r := recover()
-	if r == nil {
-		fmt.Println("No Err")
-	} else {
-		fmt.Println(r)
+func devide(a int, b int) (int, error) {
+	if b == 0 {
+		return 0, errors.New("Devision by 0")
 	}
+
+	return a / b, nil
 }
 
 func main() {
-	defer deffered()
-
-	devision := devided(1, 0)
-	fmt.Println(devision)
-	
-	fmt.Println("Programm Runs Safe")
+	r, err := devide(1, 0)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(r)
 }
