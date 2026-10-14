@@ -1,22 +1,16 @@
 package main
 
-import (
-	"errors"
-	"fmt"
-)
+import "fmt"
 
-func devide(a int, b int) (int, error) {
-	if b == 0 {
-		return 0, errors.New("Devision by 0")
-	}
-
-	return a / b, nil
+func add[T int | float64 | uint](x T, y T) T {
+	return x + y
 }
 
+
+
 func main() {
-	r, err := devide(1, 0)
-	if err != nil {
-		fmt.Println(err)
-	}
-	fmt.Println(r)
+	val := add(2, 2.5)
+	val2 := add(uint(22), uint(2))
+	fmt.Println(val)
+	fmt.Println(val2)	
 }
