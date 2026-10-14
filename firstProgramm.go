@@ -7,13 +7,21 @@ func devided(a int, b int) int {
 }
 
 func deffered(){
-	fmt.Println("defer")
+	r := recover()
+	if r == nil {
+		fmt.Println("No Err")
+	} else {
+		fmt.Println(r)
+	}
 }
 
 func main() {
 	// devision := devided(1, 0)
 	// fmt.Println(devision)
+	fmt.Println("run-1")
 	defer deffered()
 
-	fmt.Println("run")
+	// panic("Here We Are There is an Err Here Fix that Bro")
+
+	fmt.Println("run-2")
 }
