@@ -1,51 +1,19 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-type Shape interface {
-	getParam() uint
+func devided(a int, b int) int {
+	return a / b
 }
 
-// Start of Sqaure Struct
-type Sqaure struct {
-	Width uint
+func deffered(){
+	fmt.Println("defer")
 }
-
-func (s Sqaure) getParam() uint {
-	return s.Width * 4
-}
-// End of Sqaure Struct
-
-
-func isEvenParam(s Shape) bool {
-	return s.getParam() % 2 == 0
-}
-
-// Start of Triangle Struct
-type Triangle struct {
-	a uint
-	b uint
-	c uint
-}
-
-func (t Triangle) getParam() uint {
-	return t.a + t.b + t.c
-}
-
-// End of Triangle Struct
 
 func main() {
-	var shapes []Shape = []Shape{Triangle{1, 2, 3}, Sqaure{10}}
+	// devision := devided(1, 0)
+	// fmt.Println(devision)
+	defer deffered()
 
-	params := uint(0)
-
-	for _, shape := range shapes {
-		if isEvenParam(shape){
-			params += shape.getParam()
-		}
-	}
-
-	fmt.Println(params)
+	fmt.Println("run")
 }
