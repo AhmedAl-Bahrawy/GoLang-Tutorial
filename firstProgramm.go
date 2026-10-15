@@ -3,20 +3,18 @@ package main
 import "fmt"
 
 
-func change(x int) {
-	x = 100
+type Book struct {
+	id int
+	title string
 }
 
-func pChange(x *int){
-	*x = 100
-}
+func (b *Book) setTitle(t string) {
+	b.title = t
+} 
 
 func main() {
-	a := 10
-	change(a)
-	fmt.Println(a)
+	b := Book{id: 1, title: "Mohammed Salah"}
+	b.setTitle("Khalid Saqr")
 
-	b := 10
-	pChange(&b)
 	fmt.Println(b)
 }
