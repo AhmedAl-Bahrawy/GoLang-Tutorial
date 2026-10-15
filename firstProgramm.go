@@ -3,13 +3,20 @@ package main
 import "fmt"
 
 
+func change(x int) {
+	x = 100
+}
+
+func pChange(x *int){
+	*x = 100
+}
+
 func main() {
-	x := 10
-	y := &x
+	a := 10
+	change(a)
+	fmt.Println(a)
 
-	fmt.Printf("%v, %v\n", x, *y)
-
-	*y = 11
-
-	fmt.Printf("%v, %v\n", x, *y)
+	b := 10
+	pChange(&b)
+	fmt.Println(b)
 }
