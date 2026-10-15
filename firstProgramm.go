@@ -8,4 +8,8 @@ func main() {
 	y := &x
 
 	fmt.Printf("%v, %v\n", x, *y)
+
+	*y = 11
+
+	fmt.Printf("%v, %v\n", x, *y)
 }
