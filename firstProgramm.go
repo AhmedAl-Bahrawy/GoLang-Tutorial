@@ -1,20 +1,31 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 
-type Book struct {
-	id int
-	title string
+
+func run() {
+	time.Sleep(time.Second * 2)
+	fmt.Println("run")
 }
 
-func (b *Book) setTitle(t string) {
-	b.title = t
-} 
+func run2() {
+	time.Sleep(time.Second * 4)
+	fmt.Println("run2")
+}
+
+func run3() {
+	time.Sleep(time.Second * 6)
+	fmt.Println("run3")
+}
 
 func main() {
-	b := Book{id: 1, title: "Mohammed Salah"}
-	b.setTitle("Khalid Saqr")
-
-	fmt.Println(b)
+	go run()
+	go run2()
+	go run3()
+	time.Sleep(time.Second * 7)
+	fmt.Println("Done")
 }
