@@ -5,27 +5,14 @@ import (
 	"time"
 )
 
-
-
-func run() {
-	time.Sleep(time.Second * 2)
-	fmt.Println("run")
-}
-
-func run2() {
-	time.Sleep(time.Second * 2)
-	fmt.Println("run2")
-}
-
-func run3() {
-	time.Sleep(time.Second * 2)
-	fmt.Println("run3")
+func add(x int, y int,ch chan int) {
+	time.Sleep(time.Second * 5)
+	ch <- x + y
 }
 
 func main() {
-	go run()
-	go run2()
-	go run3()
-	time.Sleep(time.Second * 2)
-	fmt.Println("Done")
+	ch := make(chan int)
+	go add(5, 10, ch)
+	x := <-ch
+	fmt.Println(x)
 }
